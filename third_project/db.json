@@ -25,5 +25,9 @@
     ],
     "profile": {
         "name": "typicode"
+    },
+    "Mahbub": {
+        "age":"25",
+        "course": "JEE"
     }
 }
