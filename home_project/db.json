@@ -1,2 +1,17 @@
-
-
+{
+  "student": [
+    {
+      "id": "1",
+      "name": "Mahbub",
+      "email": "mahbub@gmail.com",
+      "fee": 5000
+    },
+    {
+      "id": "2",
+      "name": "Sabbir",
+      "email": "sabbir@gmail.com",
+      "fee": 4000
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
