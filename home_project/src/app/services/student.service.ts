@@ -25,6 +25,11 @@ export class StudentService {
   }
 
   //put Request
+
+  getById(id: string): Observable<StudentModel> {
+    return this.http.get<StudentModel>(this.baseApi + '/' + id);
+  }
+
   updateStudent(student: StudentModel): Observable<StudentModel> {
     return this.http.put<StudentModel>(this.baseApi + '/' + student.id, student);
   }
