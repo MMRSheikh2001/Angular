@@ -1,3 +1,14 @@
 {
-    
+    "Employee": [
+        {
+            "name": "Mahbub",
+            "designation": "Statistician",
+            "salary": 5000
+        },
+        {
+            "name": "Emon",
+            "designation": "Programmer",
+            "salary": 7000
+        }
+    ]
 }
