@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { StudentService } from '../../../services/student.service';
 
 @Component({
   selector: 'app-list-student',
@@ -9,11 +10,26 @@ import { RouterModule } from '@angular/router';
   styleUrl: './list-student.css',
 })
 export class ListStudent implements OnInit {
+
+
+constructor(  private studentService:StudentService,
+  private cdr :ChangeDetectorRef
+){}
+
+
   ngOnInit(): void {
     this.loadAllStudents();
   }
   loadAllStudents() {
+this.studentService.getAllStudents().subscribe(
+  {
+    
 
+
+
+  }
+
+)
   }
 
 }
