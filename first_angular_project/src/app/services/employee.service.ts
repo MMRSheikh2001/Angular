@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class EmployeeService {
+  baseApi:string="http://localhost:3000/Employee";
 //Post request
 
 //get Request
