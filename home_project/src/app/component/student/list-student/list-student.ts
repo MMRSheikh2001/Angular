@@ -40,5 +40,18 @@ export class ListStudent implements OnInit {
 
     )
   }
+  remove(id: string) {
+    this.studentService.deleteStudent(id).subscribe(
+      {
+        next: () => {
+          console.log("Success");
+          this.cdr.detectChanges();
+          this.loadAllStudents();
+        }, error: (err) => {
+          console.log(err);
+        }
+      }
+    )
+  }
 
 }
