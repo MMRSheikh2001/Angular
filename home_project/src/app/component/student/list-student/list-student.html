@@ -1,3 +1,5 @@
+<button class="btn btn-primary mx-3" [routerLink]="['/add']">Add Student</button>
+
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -5,20 +7,22 @@
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Fee</th>
-             <th scope="col">Action</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor ="let s of students">
+        <tr *ngFor="let s of students">
             <th scope="row">{{s.id}}</th>
             <td>{{s.name}}</td>
             <td>{{s.email}}</td>
             <td>{{s.fee}}</td>
             <td>
                 <button class="btn btn-danger mx-3" (click)="remove(s.id!)">Delete</button>
-                 <button class="btn btn-warning mx-3">Edit</button>
-                
+                <button class="btn btn-warning mx-3" [routerLink]="['/edit',s.id!]">Edit</button>
+
             </td>
         </tr>
     </tbody>
 </table>
+
+

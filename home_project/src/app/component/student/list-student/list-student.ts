@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { StudentService } from '../../../services/student.service';
 import { StudentModel } from '../../../model/student.model';
 
@@ -15,6 +15,7 @@ export class ListStudent implements OnInit {
 
   constructor(private studentService: StudentService,
     private cdr: ChangeDetectorRef
+
   ) { }
 
 

@@ -21,7 +21,7 @@ export class StudentService {
   //post Request
 
   saveStudent(student: StudentModel) {
-    this.http.post<StudentModel>(this.baseApi, student);
+    return this.http.post<StudentModel>(this.baseApi, student);
   }
 
   //put Request

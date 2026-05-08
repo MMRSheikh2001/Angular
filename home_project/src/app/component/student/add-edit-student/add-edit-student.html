@@ -1,1 +1,27 @@
-<p>add-edit-student works!</p>
+<!-- Simplified Wrapper Div -->
+<div class="mx-auto p-4 bg-white rounded border" style="max-width: 400px;">
+    <h4 class="mb-4">{{isEditMode ? 'Edit Student':'Add New Student'}}</h4>
+
+    <form (ngSubmit)="save()" #studentForm="ngForm">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" [(ngModel)]="student.name" name="name" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" [(ngModel)]="student.email" name="email" required>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">Fee</label>
+            <input type="number" class="form-control" [(ngModel)]="student.fee" name="fee" required>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary w-100" [disabled]="!studentForm.valid">Submit</button>
+            <button type="button" class="btn btn-outline-secondary w-100" (click)="goBack()">Cancel</button>
+        </div>
+    </form>
+</div>
