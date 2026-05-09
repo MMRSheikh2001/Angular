@@ -13,5 +13,11 @@
       "id": "iikgG7hPhFw"
     }
   ],
-  "$schema": "./node_modules/json-server/schema.json"
+  "department": [
+    {
+      "id": "1",
+      "name": "Statistics",
+      "email": "stat.edu@gmail.com"
+    }
+  ]
 }
