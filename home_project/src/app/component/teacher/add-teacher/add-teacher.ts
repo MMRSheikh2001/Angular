@@ -77,7 +77,7 @@ export class AddTeacher implements OnInit {
 
 
 goBack(){
-  this.router.navigate(['/allTeacher'])
+  this.router.navigate(['/allTeacher']);
 }
 
 }
