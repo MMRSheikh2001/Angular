@@ -18,6 +18,22 @@
       "id": "1",
       "name": "Statistics",
       "email": "stat.edu@gmail.com"
+    },
+    {
+      "id": "2",
+      "name": "History",
+      "email": "histography.edu@gmail.com"
+    },
+    {
+      "id": "v7nZchL-Slc",
+      "name": "Chemistry",
+      "email": "alchemy.education@gmail.com"
+    },
+    {
+      "id": "9V0FOUgte-0",
+      "name": "Physics",
+      "email": "gravity@gmail.com"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

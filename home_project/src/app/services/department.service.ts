@@ -18,7 +18,7 @@ export class DepartmentService {
   }
 
 
-  saveStudent(student: DepartmentModel) {
+  saveDepartment(student: DepartmentModel) {
     return this.http.post<DepartmentModel>(this.departmentApi, student);
   }
 
@@ -28,13 +28,13 @@ export class DepartmentService {
     return this.http.get<DepartmentModel>(this.departmentApi + '/' + id);
   }
 
-  updateStudent(student: DepartmentModel): Observable<DepartmentModel> {
+  updateDepartment(student: DepartmentModel): Observable<DepartmentModel> {
     return this.http.put<DepartmentModel>(this.departmentApi + '/' + student.id, student);
   }
 
 
   //delete Request
-  deleteStudent(id: string): Observable<void> {
+  deleteDepartment(id: string): Observable<void> {
     return this.http.delete<void>(this.departmentApi + '/' + id);
   }
 }

@@ -1,0 +1,60 @@
+<div class="container mt-4">
+    <div class="card shadow-sm mx-auto" style="max-width: 500px;">
+        <div class="card-header bg-white">
+            <h5 class="mb-0">Department Details</h5>
+        </div>
+        <div class="card-body">
+            <form #depForm="ngForm" (ngSubmit)="saveDepartment()">
+                <!-- Name Field -->
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" [(ngModel)]="department.name"
+                        placeholder="e.g. Engineering" required>
+
+                </div>
+
+                <!-- Email Field -->
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email" [(ngModel)]="department.email" required
+                        placeholder="dept@company.com">
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-success">
+                        {{isEditMode?"Update Department":"Save Department"}}
+                    </button>
+                    <button type="button" class="btn btn-light" (click)="resetForm()">
+                        Clear
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- department-card.component.html -->
+<div class="container mt-4">
+    <div class="row">
+        <div *ngFor="let dept of departments,let i = index" class="col-md-4 mb-3">
+            <div class="card border shadow-sm">
+                <div class="card-body">
+                    <h6 class="text-muted mb-1">{{ i+1}}</h6>
+                    <h5 class="card-title">{{ dept.name }}</h5>
+                    <p class="card-text small text-secondary">{{ dept.email }}</p>
+                    <!-- (click)="editDept(dept)"   (click)="deleteDept(dept.id)" -->
+                    <div class="d-flex gap-2 border-top pt-3">
+                        <button class="btn btn-sm btn-primary w-100" (click)="editDepartment(dept)">
+                            Edit
+                        </button>
+                        <button class="btn btn-sm btn-outline-danger w-100" (click)="deleteDepartment(dept.id!)">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
