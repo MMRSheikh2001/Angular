@@ -35,5 +35,14 @@
       "email": "gravity@gmail.com"
     }
   ],
-  "$schema": "./node_modules/json-server/schema.json"
+  "teacher": [
+    {
+      "id": "1",
+      "name": "Emran Hossain",
+      "email": "emran@gmail.com",
+      "designation": "Professor",
+      "cell": "46456466",
+      "departmentId": "9V0FOUgte-0"
+    }
+  ]
 }

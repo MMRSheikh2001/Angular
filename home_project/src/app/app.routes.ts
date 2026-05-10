@@ -4,6 +4,8 @@ import { Home } from './component/layout/home/home';
 import { ListStudent } from './component/student/list-student/list-student';
 import { AddEditStudent } from './component/student/add-edit-student/add-edit-student';
 import { Department } from './component/department/department';
+import { AddTeacher } from './component/teacher/add-teacher/add-teacher';
+import { ListTeacher } from './component/teacher/list-teacher/list-teacher';
 
 
 export const routes: Routes = [
@@ -11,5 +13,7 @@ export const routes: Routes = [
     { path: 'students', component: ListStudent },
     { path: 'edit/:id', component: AddEditStudent },
     { path: 'add', component: AddEditStudent },
-    { path: 'department', component: Department }
+    { path: 'department', component: Department },
+    { path: 'addTeacher', component: AddTeacher },
+    { path: 'allTeacher', component: ListTeacher }
 ];
