@@ -1,1 +1,60 @@
-<p>add-teacher works!</p>
+<!-- teacher-form.component.html -->
+<div class="container mt-4">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white py-3">
+            <h5 class="card-title mb-0">{{isEditMode?'Edit Teacher': 'Add Teacher'}}</h5>
+        </div>
+        <div class="card-body p-4">
+            <form (ngSubmit)="save()">
+                <div class="row">
+                    <!-- Full Name -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold small">Full Name</label>
+                        <input type="text" class="form-control" name="name" placeholder="Enter name"
+                            [(ngModel)]="teacher.name" required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold small">Email Address</label>
+                        <input type="email" class="form-control" name="email" placeholder="email@example.com"
+                            [(ngModel)]="teacher.email" required>
+                    </div>
+
+                    <!-- Designation -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold small">Designation</label>
+                        <input type="text" class="form-control" name="designation" placeholder="e.g. Senior Lecturer"
+                            [(ngModel)]="teacher.designation" required>
+                    </div>
+
+                    <!-- Cell Phone -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-bold small">Cell Number</label>
+                        <input type="text" class="form-control" name="cell" [(ngModel)]="teacher.cell"
+                            placeholder="+123456789" required>
+                    </div>
+
+                    <!-- Department Dropdown -->
+                    <div class="col-12 mb-4">
+                        <label class="form-label fw-bold small">Department</label>
+                        <select class="form-select" name="departmentId" [(ngModel)]="teacher.departmentId" required>
+                            <option value="" disabled selected>Select Department</option>
+                            <option *ngFor="let dept of departments" [value]="dept.id">
+                                {{ dept.name }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="d-flex gap-2 justify-content-end border-top pt-3">
+                    <button type="reset" class="btn btn-light px-4">Cancel</button>
+                    <button type="submit" class="btn btn-primary px-4">
+                        {{isEditMode?'Edit Teacher': 'Add Teacher'}}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

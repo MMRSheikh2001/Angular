@@ -1,13 +1,15 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { TeacherService } from '../../../services/teacher.service';
 import { DepartmentService } from '../../../services/department.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DepartmentModel } from '../../../model/department.model';
 import { TeacherModel } from '../../../model/teacher.model';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-add-teacher',
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './add-teacher.html',
   styleUrl: './add-teacher.css',
 })
@@ -22,10 +24,27 @@ export class AddTeacher implements OnInit {
     private teacherService: TeacherService,
     private depService: DepartmentService,
     private cdr: ChangeDetectorRef,
-    private router: Router
+    private router: Router,
+    private activeRoute: ActivatedRoute
   ) { }
   ngOnInit(): void {
     this.loadAllDep();
+    const id = this.activeRoute.snapshot.paramMap.get('id');
+    if (id) {
+      this.isEditMode = true;
+      this.teacherService.getById(id).subscribe(
+        {
+          next: (data) => {
+            this.teacher = data;
+            this.cdr.markForCheck();
+          }, error: (err) => {
+            console.log(err);
+          }
+        }
+      )
+    }
+
+
   }
 
   loadAllDep() {
@@ -76,8 +95,8 @@ export class AddTeacher implements OnInit {
   }
 
 
-goBack(){
-  this.router.navigate(['/allTeacher']);
-}
+  goBack() {
+    this.router.navigate(['/allTeacher']);
+  }
 
 }

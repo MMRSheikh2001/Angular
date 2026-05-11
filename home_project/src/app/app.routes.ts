@@ -15,5 +15,6 @@ export const routes: Routes = [
     { path: 'add', component: AddEditStudent },
     { path: 'department', component: Department },
     { path: 'addTeacher', component: AddTeacher },
+    { path: 'editTeacher/:id', component: AddTeacher },
     { path: 'allTeacher', component: ListTeacher }
 ];

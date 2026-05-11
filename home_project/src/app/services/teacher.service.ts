@@ -35,7 +35,7 @@ export class TeacherService {
 
 
   //delete Request
-  deleteDepartment(id: string): Observable<void> {
+  deleteTeacher(id: string): Observable<void> {
     return this.http.delete<void>(this.teacherApi + '/' + id);
   }
 }
