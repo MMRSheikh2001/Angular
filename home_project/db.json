@@ -53,5 +53,16 @@
       "id": "AofaDhZhJ7o"
     }
   ],
+  "users": [
+    {
+      "id": "1",
+      "name": "mahbub",
+      "email": "mahbub@gmail.com",
+      "password": "123456",
+      "phone": "2763637",
+      "image": "dsdkhkjfhsdjk",
+      "role": "Teacher"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
