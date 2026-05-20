@@ -27,8 +27,21 @@ export class Login {
             const user = users[0];
             if (user.password == this.password) {
               alert("login success");
-              this.router.navigate(['/allTeacher'])
+              //   this.router.navigate(['/profile'])
               localStorage.setItem('user', JSON.stringify(user));
+
+              if (user.role == 'admin') {
+                this.router.navigate(['/profile-admin']);
+              }
+              else if (user.role == 'teacher') {
+                this.router.navigate(['/profile-teacher'])
+              }
+              else if (user.role == 'student') {
+                this.router.navigate(['/profile-student'])
+              }
+
+
+
             }
             else {
               alert("Invalid Password");

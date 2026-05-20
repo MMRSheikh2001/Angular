@@ -5,5 +5,5 @@ export interface UserModel {
     password: string;
     phone: string;
     image: string;
-    role: string;
+    role: 'teacher' | 'student' | 'admin'|'';
 }
